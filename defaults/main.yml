@@ -1,5 +1,5 @@
 ---
-kibana_version: "6.x"
+kibana_version: "7.x"
 
 kibana_package: kibana
 kibana_package_state: present
@@ -16,3 +16,11 @@ kibana_server_host: "0.0.0.0"
 kibana_elasticsearch_url: "http://localhost:9200"
 kibana_elasticsearch_username: ""
 kibana_elasticsearch_password: ""
+
+kibana_home: '{{ default["kibana_home"] }}'
+kibana_pid_dir: '{{ default["kibana_pid_dir"] }}'
+kibana_log_dir: '{{ default["kibana_log_dir"] }}'
+kibana_conf_dir: '{{ default["kibana_conf_dir"] }}'
+kibana_user: '{{ default["kibana_user"] }}'
+kibana_group: '{{ default["kibana_group"] }}'
+...

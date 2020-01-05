@@ -1,0 +1,8 @@
+---
+default:
+  kibana_home: /usr/share/kibana
+  kibana_log_dir: /var/log/kibana
+  kibana_conf_dir: /etc/kibana
+  kibana_user: kibana
+  kibana_group: kibana
+  kibana_pid_dir: /var/run/kibana

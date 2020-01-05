@@ -25,7 +25,7 @@ server.host: "{{ kibana_server_host }}"
 #server.name: "your-hostname"
 
 # The URL of the Elasticsearch instance to use for all your queries.
-elasticsearch.url: {{ kibana_elasticsearch_url }}
+elasticsearch.hosts: ["{{ kibana_elasticsearch_url }}"]
 
 # When this setting's value is true Kibana uses the hostname specified in the server.host
 # setting. When the value of this setting is false, Kibana uses the hostname of the host
@@ -34,7 +34,7 @@ elasticsearch.url: {{ kibana_elasticsearch_url }}
 
 # Kibana uses an index in Elasticsearch to store saved searches, visualizations and
 # dashboards. Kibana creates a new index if the index doesn't already exist.
-#kibana.index: ".kibana"
+kibana.index: ".kibana"
 
 # The default application to load.
 #kibana.defaultAppId: "home"
@@ -95,10 +95,10 @@ elasticsearch.password: "{{ kibana_elasticsearch_password }}"
 #elasticsearch.logQueries: false
 
 # Specifies the path where Kibana creates the process ID file.
-#pid.file: /var/run/kibana.pid
+pid.file: {{ kibana_pid_dir }}/kibana.pid
 
 # Enables you specify a file where Kibana stores log output.
-#logging.dest: stdout
+logging.dest: '{{ kibana_log_dir }}/kibana.log'
 
 # Set the value of this setting to true to suppress all logging output.
 #logging.silent: false
@@ -108,7 +108,7 @@ elasticsearch.password: "{{ kibana_elasticsearch_password }}"
 
 # Set the value of this setting to true to log all events, including system usage information
 # and all requests.
-#logging.verbose: false
+logging.verbose: false
 
 # Set the interval in milliseconds to sample system and process performance
 # metrics. Minimum is 100ms. Defaults to 5000.
